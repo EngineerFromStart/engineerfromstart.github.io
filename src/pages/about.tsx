@@ -1,14 +1,14 @@
 import React from "react"
 import Header from "../components/header"
-import HeaderCSS from "../components/about.module.css"
+import * as AboutCSS from "./about.module.css"
 
 export default function About() {
 	const User = props => (
-		  <div className={HeaderCSS.user}>
-			<img src={props.avatar} className={HeaderCSS.avatar} alt="" />
-			<div className={HeaderCSS.description}>
-			  <h2 className={HeaderCSS.username}>{props.username}</h2>
-			  <p className={HeaderCSS.excerpt}>{props.excerpt}</p>
+		  <div className={AboutCSS.user}>
+			<img src={props.avatar} className={AboutCSS.avatar} alt="" />
+			<div className={AboutCSS.description}>
+			  <h2 className={AboutCSS.username}>{props.username}</h2>
+			  <p className={AboutCSS.excerpt}>{props.excerpt}</p>
 			</div>
 		  </div>
 		)

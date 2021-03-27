@@ -1,14 +1,31 @@
 import React from "react"
-import { Link } from "gatsby"
-import Header from "../components/header"
-import { PageProps } from "gatsby"
+import { PageProps, graphql } from "gatsby"
+import '../styles/styles.scss'
+import Layout from '../components/layout'
+export default class Home extends React.Component {
 
-export default function Home(props: PageProps) {
-  return (
-    <div style={{ color: `purple` }}>
-      <Header headerText="Welcome to my world" />
-      <p>What a world.</p>
-      {props.path}
-    </div>
-  );
+  constructor(props: PageProps) {
+    super(props);
+  }
+
+
+  render() {
+    return (
+      <Layout pageProps={this.props} titles={this.props.data}></Layout>
+    )
+  };
+
 }
+
+export const query = graphql`
+query {
+  site {
+    siteMetadata {
+      titles{
+        id
+        title
+      }
+    }
+  }
+}
+`
